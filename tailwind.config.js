@@ -7,12 +7,23 @@ module.exports = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      fontFamily: {
+        sans: 'Inter, sans-serif',
+        decorated: 'Roboto Mono, monospace'
       },
+      colors: {
+        "dark-bg": "#23212E",
+        "dark-second-bg": "#252836"
+      }
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/typography')],
+  experimental: {
+    fontLoaders: [
+      {
+        loader: 'next/font/google',
+        options: { subsets: ['latin'] },
+      },
+    ],
+  },
 }
