@@ -1,7 +1,8 @@
+import Head from "next/head";
 import "./globals.css";
-import { Inter } from "next/font/google";
+import { Open_Sans } from "next/font/google";
 
-const inter = Inter({ subsets: ["latin"] });
+const openSans = Open_Sans({ subsets: ["latin"], weight: ["400"] });
 
 export default function RootLayout({
   children,
@@ -10,8 +11,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <div className="h-screen bg-omni-dark flex max-w-3xl mx-auto">
+      <body className={openSans.className}>
+        <div className="h-screen bg-primary-dark flex max-w-3xl mx-auto">
           <main className="flex-1">
             <div className="px-10 py-16">{children}</div>
           </main>

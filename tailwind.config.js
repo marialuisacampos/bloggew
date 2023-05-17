@@ -7,13 +7,13 @@ module.exports = {
   ],
   theme: {
     extend: {
-      fontFamily: {
-        sans: 'Inter, sans-serif',
-        decorated: 'Roboto Mono, monospace'
-      },
       colors: {
-        "dark-bg": "#23212E",
-        "dark-second-bg": "#252836"
+        "primary-dark": "#1A1D21",
+        "secondary-dark": "#0D1216",
+        "yellow": "#CFD714",
+        "pink": "#C865C9",
+        "green": "#13AD6B",
+        "blue": "#149ABE"
       }
     },
   },
