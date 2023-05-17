@@ -2,10 +2,11 @@ import BlogHeader from "@/components/blog-header";
 import RootLayout from "../layout";
 import { PostFragment } from "@/utils/mocks/post";
 import FragmentPost from "@/components/fragment-post";
+import { Footer } from "@/components/footer";
 
 export default function Main() {
   return (
-    <RootLayout>
+    <>
       <BlogHeader
         title="Malu"
         linkedinLink="https://linkedin.com/in/marialuisacampos"
@@ -22,6 +23,7 @@ export default function Main() {
           />
         ))}
       </div>
-    </RootLayout>
+      <Footer />
+    </>
   );
 }
