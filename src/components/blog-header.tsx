@@ -2,12 +2,13 @@ import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 
 import { Poppins } from "next/font/google";
 import { useState } from "react";
+import Link from "next/link";
 
 interface BlogHeaderProps {
   title: string;
   linkedinLink: string;
   githubLink: string;
-  resumeLink: string;
+  user: string;
 }
 
 const poppins = Poppins({ subsets: ["latin"], weight: ["800"] });
@@ -16,7 +17,7 @@ export default function BlogHeader({
   title,
   linkedinLink,
   githubLink,
-  resumeLink,
+  user,
 }: BlogHeaderProps) {
   return (
     <header className="flex flex-col pb-12">
@@ -32,19 +33,19 @@ export default function BlogHeader({
       </div>
       <div className="flex justify-between">
         <h1 className={`text-3xl ${poppins.className}`}>{title}</h1>
-        <div className="flex gap-6 items-center">
-          <a>
+        <div className="flex gap-3 items-center">
+          <a href={linkedinLink} className="hover:text-blue">
             <AiFillLinkedin size={30} />
           </a>
-          <a>
+          <a href={githubLink} className="hover:text-blue">
             <AiFillGithub size={30} />
           </a>
-          <a
-            href={resumeLink}
+          <Link
+            href={`/${user}/portfolio`}
             className={`text-yellow text-xl font-bold ${poppins.className}`}
           >
             Portfolio
-          </a>
+          </Link>
         </div>
       </div>
     </header>

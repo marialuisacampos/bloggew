@@ -3,27 +3,27 @@ import RootLayout from "../layout";
 import { PostFragment } from "@/utils/mocks/post";
 import FragmentPost from "@/components/fragment-post";
 import { Footer } from "@/components/footer";
+import { UserLayout } from "@/components/user-layout";
 
 export default function Main() {
   return (
-    <>
-      <BlogHeader
-        title="Malu"
-        linkedinLink="https://linkedin.com/in/marialuisacampos"
-        githubLink="https://github.com/marialuisacampos"
-        resumeLink="https://docs.google.com/document/d/1TrFNwBTk2wHQ3gkKtxlLadz8Z8Gag6p13DQnkZ-vvrU/edit?usp=sharing"
-      />
+    <UserLayout
+      user="marialuisacampos"
+      blogTitle="Malu"
+      linkedinLink="https://linkedin.com/in/marialuisacampos"
+      githubLink="https://github.com/marialuisacampos"
+    >
       <div className="flex flex-col gap-10">
         {PostFragment.map((post) => (
           <FragmentPost
             title={post.title}
             content={post.content}
-            author="Malu"
-            key={post.title}
+            author="marialuisacampos"
+            key={post.id}
+            id={post.id}
           />
         ))}
       </div>
-      <Footer />
-    </>
+    </UserLayout>
   );
 }
